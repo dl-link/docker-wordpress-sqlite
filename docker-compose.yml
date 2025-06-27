@@ -1,0 +1,13 @@
+version: '3'
+services:
+  wordpress:
+    build: .
+    ports:
+      - "8080:80"
+    environment:
+      - PHP_UPLOAD_MAX_FILESIZE=64M  # Update as need
+      - PHP_MEMORY_LIMIT=512M
+    volumes:
+      - wp_data:/var/www/html
+volumes:
+  wp_data:
